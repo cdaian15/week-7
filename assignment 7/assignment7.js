@@ -16,27 +16,24 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
-app.post('/post-loopback', function(req,res){
+app.post('/resultPost', function(req,res){
   var qParams = [];
   for (var p in req.body){
     qParams.push({'name':p,'value':req.body[p]})
   }
-  console.log(qParams);
-  console.log(req.body);
   var context = {};
   context.dataList = qParams;
-  res.render('post-loopback', context);
+  res.render('resultPost', context);
 });
 
-app.get('/get-loopback',function(req,res){
+app.get('/resultGet',function(req,res){
   var qParams = [];
   for (var p in req.query){
 	qParams.push({'name':p,'value':req.query[p]})
   }
   var context = {};
-  console.log(qParams);
   context.dataList = qParams;
-  res.render('get-loopback', context);
+  res.render('resultGet', context);
 });
 
 app.use(function(req,res){
