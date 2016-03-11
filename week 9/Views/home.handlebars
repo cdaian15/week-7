@@ -1,0 +1,33 @@
+<h1>TEST</h1>
+<form method="post">
+    <input type="submit" name="makesAPI" value="makesAPI"/>
+    <br />
+    Enter zipcode: <input type="text" name="zipcode" value="98052" />
+    <input type="submit" name="dealerAPI" value="dealerAPI"/>
+    
+</form>
+
+{{#if makesList}}
+<h2>There are {{makesCount}} makes of cars</h2>
+<ul>
+    {{#each makesList}}
+    <li>
+        <span>Name: {{this.name}},</span>
+        <span>id: {{this.id}}</span>
+    </li>
+    {{/each}}
+</ul>
+{{/if}}
+
+{{#if dealerList}}
+<ul>
+    {{#each dealerList}}
+    <li>
+        <span>Name: {{this.name}},</span>
+        <span>id: {{this.id}}</span>
+        <span>type: {{this.type}}</span>
+    </li>
+    {{/each}}
+</ul>
+{{/if}}
+
